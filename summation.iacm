@@ -1,0 +1,28 @@
+jmp 	start
+dw	i   0
+dw	s 	0
+dw	N 	0
+dw	one 	1
+dw	zero 	0
+start:
+	readh
+	store	N
+	load 	one
+	store 	i
+	load 	zero
+	store 	s
+ loop:
+ 	load 	N
+	sub 	i
+	jmpl 	xit
+	load 	s
+	add 	i
+	store 	s
+	load 	i
+	add 	one
+	store 	i
+	jmp 	loop
+ xit:
+ 	load s
+	writeh
+	halt

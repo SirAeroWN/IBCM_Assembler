@@ -1,0 +1,36 @@
+jmp 	start
+dw 	i 	0
+dw 	s 	0
+dw 	a 	0
+dw 	n 	0
+dw 	zero 	0
+dw 	one 	1
+dw 	adit 	5000
+start:
+	readh
+	store 	a
+	readh
+	store 	n
+	load 	zero
+	store 	i
+	store 	s
+loop:
+	load 	n
+	sub 	i
+	jmpl 	xit
+	jmpe 	xit
+	load 	adit
+	add 	a
+	add 	i
+	store 	doit
+	load 	s
+	dw 	doit 	0
+	store 	s
+	load 	i
+	add 	one
+	store 	i
+	jmp 	loop
+xit:
+	load 	s
+	writeh
+	halt
