@@ -325,7 +325,7 @@ for i in range(1, tot):
 		c += 1
 
 outfile = "out.ibcm"
-if (sys.argv[2] != None or argv[2] != ""):
+if (len(sys.argv) >= 3 and argv[2] != ""):
 	outfile = sys.argv[2]
 
 with open(outfile, "w") as out:
